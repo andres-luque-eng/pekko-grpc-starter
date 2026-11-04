@@ -35,6 +35,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=${GITHUB_REF#refs/tags/}
-          VERSION=${VERSION}
           sbt -Dversion=$VERSION publish
 
