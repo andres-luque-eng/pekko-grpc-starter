@@ -1,6 +1,6 @@
 name := "pekko-grpc-starter"
 organization := "io.github.andres-luque-eng"
-version := "0.1.0-SNAPSHOT"
+version := sys.props.getOrElse("version", "0.1.0-SNAPSHOT")
 scalaVersion := "3.10.0"
 
 libraryDependencies ++= Seq(
