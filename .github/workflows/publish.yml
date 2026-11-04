@@ -33,4 +33,8 @@ jobs:
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: sbt publish
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${VERSION}
+          sbt -Dversion=$VERSION publish
+
